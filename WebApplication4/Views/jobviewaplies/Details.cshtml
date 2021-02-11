@@ -1,0 +1,66 @@
+﻿@model WebApplication3.Models.jobviewaply
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>jobviewaply</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.jobtitle)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.jobtitle)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.experiance)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.experiance)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.vaccancies)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.vaccancies)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.contactnumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.contactnumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

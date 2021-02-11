@@ -1,0 +1,17 @@
+﻿body {
+}
+
+div.job{
+      position: absolute;
+      right: 0;
+      left:50px;
+}
+div.Intern {
+    position: absolute;
+    right: 0;
+    left: 50px;
+}
+.but1{
+     border-radius: 25px;
+     background:#0cf379;
+}

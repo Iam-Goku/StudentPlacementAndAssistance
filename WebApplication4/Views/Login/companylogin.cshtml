@@ -1,0 +1,31 @@
+﻿@model WebApplication3.Models.complog
+@{
+    ViewBag.Title = "companylogin";
+}
+
+<link href="~/css/Login.css" rel="stylesheet" />
+<div class="container">
+    @using (Html.BeginForm("companylogin", "Login", FormMethod.Post))
+    {
+        <div style="background-image:linear-gradient(rgb(255, 255, 255),rgb(0, 148, 255))">
+            <center><P style="font-size:50px;color:crimson"><b>COMPANY LOGIN</b></P></center>
+        </div>
+
+        <center>
+            <label for="id"><b>COMPANY NAME</b></label>
+            <input type="text" placeholder="Enter Company name" name="companyname" id="companyname" required>
+            <br/>
+        </center>
+
+        <center>
+            <label for="id"><b>PASSWORD</b></label>
+            <input type="password" placeholder="Enter password" name="password" id="password" required>
+        </center>
+
+
+        <div>
+            <button type="submit" class="login">Login</button>
+            <strong>@Html.DisplayFor(m => m.msg)</strong>
+        </div>
+    }
+</div>

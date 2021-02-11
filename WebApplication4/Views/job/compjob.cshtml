@@ -1,0 +1,47 @@
+﻿@model WebApplication3.Models.jobs
+@{
+    ViewBag.Title = "compjob";
+}
+
+<h2>compjob</h2>
+<div>
+    @using (Html.BeginForm("job", "job", FormMethod.Post))
+
+    {
+
+        <div><label>id</label> </div>
+        <div>
+            @Html.TextBoxFor(m => m.id)
+            @Html.ValidationMessageFor(m => m.id)
+        </div>
+        <div><label>job title</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.jobtitle)
+            @Html.ValidationMessageFor(m => m.jobtitle)
+        </div>
+        <div><label>Experiance</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.experiance)
+            @Html.ValidationMessageFor(m => m.experiance)
+        </div>
+        <div><label>Vaccancies</label> </div>
+        <div>
+            @Html.TextBoxFor(m => m.vaccancies)
+            @Html.ValidationMessageFor(m => m.vaccancies)
+        </div>
+        <div><label>Contact Number</label> </div>
+        <div>
+            @Html.TextBoxFor(m => m.contactnumber)
+            @Html.ValidationMessageFor(m => m.contactnumber)
+        </div>
+        <div><label>Email</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+        </div>
+        <div>
+            <input type="submit" value="add" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+</div>

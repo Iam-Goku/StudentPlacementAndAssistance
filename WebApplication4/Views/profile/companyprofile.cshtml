@@ -1,0 +1,40 @@
+﻿@model WebApplication3.Models.companyprof
+@{
+    ViewBag.Title = "companyprofile";
+}
+
+<h2>companyprofile</h2>
+
+<div>
+    @using (Html.BeginForm("company profile", "profile", FormMethod.Post))
+    {
+        <div><label>company name</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.companyname)
+            @Html.ValidationMessageFor(m => m.companyname)
+
+        </div>
+        <div><label>address</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.address)
+            @Html.ValidationMessageFor(m => m.address)
+
+        </div>
+        <div><label>Phone</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.phone)
+            @Html.ValidationMessageFor(m => m.phone)
+
+        </div>
+        <div><label>Email</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+
+        </div>
+        <div><label>msg</label></div>
+        <div>
+            @Html.ActionLink("homepage", "home1", "login")
+        </div>
+    }
+</div>

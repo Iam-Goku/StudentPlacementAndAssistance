@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "adminlog";
+}
+
+<center>
+    <p style="font-size:40px;color:aqua">welcome @Session["log"]</p>
+    <br />
+    
+    <br />
+    <div>
+        @Html.ActionLink("Change Password", "changeload", "password", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <br />
+    <div>
+        @Html.ActionLink("Apply Job", "jobview", "applyjobview", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <br />
+    <div>
+        @Html.ActionLink("Apply Internship", "internview", "applyinternview", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+</center>

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<link href="~/css/HomePage.css" rel="stylesheet" />
+<body bgcolor="cyan">
+    <table style="width:100%;">
+        <tr>
+            <td>
+               <div style="height:150px;background-image:linear-gradient(rgb(255, 255, 255),rgb(0, 148, 255))">
+                   <center><p style="font-size:50px;color:crimson"><b>LOGIN</b></p></center> 
+
+                </div>
+
+                <center>
+                    <a href='@Url.Action("studentlogin", "Login")'>
+                        <img src='@Url.Content("~/student.jpg")' class="img" />
+                    </a>
+                </center>
+                    <br /><br /><br />
+
+                    <center>
+                        <a href='@Url.Action("companylogin","Login")'>
+                            <img src='@Url.Content("~/company.jpg")' class="img">
+                        </a>
+                    </center>
+
+                    <br /><br /><br />
+                <center>
+                    <a href="@Url.Action("adminlogin","Login")">
+                        <img src='@Url.Content("~/admin.jpg")'class="img">
+                    </a>
+                </center>
+</td>
+        </tr>
+    </table>
+</body>

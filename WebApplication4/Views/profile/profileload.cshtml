@@ -1,0 +1,40 @@
+﻿@model WebApplication3.Models.profileClass1
+@{
+    ViewBag.Title = "profileload";
+    var profileClass1 = ViewData.Model;
+}
+
+<center><h2>PROFILE</h2></center>
+<div>
+    @using (Html.BeginForm("student profile", "profile", FormMethod.Post))
+    {
+        <div><label>Name</label></div>
+        <div>
+           @profileClass1.name
+
+        </div>
+        <div><label>Age</label></div>
+        <div>
+            @profileClass1.age
+
+        </div>
+        <div><label>Qualification</label></div>
+        <div>
+            @profileClass1.qualification
+
+        </div>
+        <div><label>Passoutyear</label></div>
+        <div>
+            @profileClass1.passoutyear
+
+        </div>
+
+        <div><label>Email</label></div>
+        <div>
+            @profileClass1.email
+
+        </div>
+      
+    }
+</div>
+

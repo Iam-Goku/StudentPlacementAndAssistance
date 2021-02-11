@@ -1,0 +1,36 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    @using (Html.BeginForm("jobappview", "jobapplications", FormMethod.Post))
+    {
+        <table>
+
+            @foreach (var jobapp in Model)
+                {
+                <tr>
+                    <td>@jobapp.id</td>
+                    <th>applicant name</th>
+                    <td>@jobapp.username</td>
+                    
+
+                    <td> <input id="Button1" type="button" value="confirm" onclick="window.location.href ='@Url.Action("","")'"  /></td>
+                    <td> <input id="Button2" type="button" value="Details" onclick="window.location.href ='@Url.Action("profileload1","viewstuddetails")'"  /></td>
+                
+                </tr>
+            }
+        </table>
+    }
+</body>
+</html>
+
+

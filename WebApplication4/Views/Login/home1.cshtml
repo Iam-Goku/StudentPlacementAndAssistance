@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "home1";
+}
+
+<center>
+<p style="font-size:40px;color:aqua"> welcome @Session["log"]</p>
+<br/>
+    <div>
+        @Html.ActionLink("View Profile", "companyprofile", "profile", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+     <br />
+    <div>
+        @Html.ActionLink("Change Password", "changeload1", "password", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+     <br />
+    <div>
+        @Html.ActionLink("Enter Job", "compjob", "job", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <br />
+    <div>
+        @Html.ActionLink("Enter Internships", "interns", "internship", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <br />
+    <div>
+        @Html.ActionLink("View Job Applications", "jobappview", "jobapplications", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+     <br />
+    <div>
+        @Html.ActionLink("View Internship Application", "interns", "internship", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    </center>

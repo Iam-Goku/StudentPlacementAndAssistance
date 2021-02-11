@@ -1,0 +1,26 @@
+﻿@model WebApplication3.Models.studlog
+@{
+    ViewBag.Title = "Applyjob1";
+}
+
+<h2>AppyJob</h2>
+@using (Html.BeginForm("Applyjob1", "Applyjobview1", FormMethod.Post))
+{
+    <div><label>username</label></div>
+    <div>
+        @Html.TextBoxFor(m => m.username)
+        @Html.ValidationMessageFor(m => m.username)
+    </div>
+    <div><label>password</label></div>
+    <div>
+        @Html.PasswordFor(m => m.password)
+        @Html.ValidationMessageFor(m => m.password)
+
+    </div>
+    <div>
+        <input type="submit" value="Apply" />
+        @Html.DisplayFor(m => m.msg)
+    </div>
+}
+
+

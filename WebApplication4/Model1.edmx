@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="registrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="applyintern">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="date" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="applyjob1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="companyy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="companyname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="internship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="amount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="duration" Type="int" Nullable="false" />
+          <Property Name="internshipname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contactnumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="jobtitle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="experiance" Type="int" Nullable="false" />
+          <Property Name="vaccancies" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contactnumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobapply">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="applydate" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="qualification" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="passoutyear" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="sp_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_appintern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="date" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_appjob" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="date" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_appljob1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="sp_changepwd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="oldpwd" Type="varchar" Mode="In" />
+          <Parameter Name="newpwd" Type="varchar" Mode="In" />
+          <Parameter Name="uname" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="sp_company" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="companyname" Type="varchar" Mode="In" />
+          <Parameter Name="address" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_compprof" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="companyname" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_comppwd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="oldpwd" Type="varchar" Mode="In" />
+          <Parameter Name="newpwd" Type="varchar" Mode="In" />
+          <Parameter Name="companyname" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="sp_intern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="amount" Type="varchar" Mode="In" />
+          <Parameter Name="duration" Type="varchar" Mode="In" />
+          <Parameter Name="internshipname" Type="varchar" Mode="In" />
+          <Parameter Name="contactnumber" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_job" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="jobtitle" Type="varchar" Mode="In" />
+          <Parameter Name="experiance" Type="int" Mode="In" />
+          <Parameter Name="vaccancies" Type="varchar" Mode="In" />
+          <Parameter Name="contactnumber" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_jobapply" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_loginadm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="sp_loginadmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_logincom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="companyname" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="sp_loginstu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="sp_profile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_student" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="age" Type="int" Mode="In" />
+          <Parameter Name="qualification" Type="varchar" Mode="In" />
+          <Parameter Name="passoutyear" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_viewappjob" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_viewintern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_viewjob" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="registrationModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="applyintern" EntityType="Self.applyintern" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="applyjob1" EntityType="Self.applyjob1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="companyy" EntityType="Self.companyy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="internship" EntityType="Self.internship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="job" EntityType="Self.job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobapply" EntityType="Self.jobapply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="registrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="applyintern">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="companyy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="companyname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="internship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="duration" Type="Int32" Nullable="false" />
+          <Property Name="internshipname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contactnumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="jobtitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="experiance" Type="Int32" Nullable="false" />
+          <Property Name="vaccancies" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contactnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobapply">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="applydate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passoutyear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="registrationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="applyinterns" EntityType="Self.applyintern" />
+          <EntitySet Name="companyies" EntityType="Self.companyy" />
+          <EntitySet Name="internships" EntityType="Self.internship" />
+          <EntitySet Name="jobs" EntityType="Self.job" />
+          <EntitySet Name="jobapplies" EntityType="Self.jobapply" />
+          <EntitySet Name="students" EntityType="Self.student" />
+          <FunctionImport Name="sp_admin">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_appintern">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="date" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_appjob">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="date" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_changepwd">
+            <Parameter Name="oldpwd" Mode="In" Type="String" />
+            <Parameter Name="newpwd" Mode="In" Type="String" />
+            <Parameter Name="uname" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_company">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="companyname" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_compprof" ReturnType="Collection(registrationModel.sp_compprof_Result)">
+          <Parameter Name="companyname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_comppwd">
+            <Parameter Name="oldpwd" Mode="In" Type="String" />
+            <Parameter Name="newpwd" Mode="In" Type="String" />
+            <Parameter Name="companyname" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_intern">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="amount" Mode="In" Type="String" />
+            <Parameter Name="duration" Mode="In" Type="String" />
+            <Parameter Name="internshipname" Mode="In" Type="String" />
+            <Parameter Name="contactnumber" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_job">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="jobtitle" Mode="In" Type="String" />
+            <Parameter Name="experiance" Mode="In" Type="Int32" />
+            <Parameter Name="vaccancies" Mode="In" Type="String" />
+            <Parameter Name="contactnumber" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_loginadm">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_loginadmin">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_logincom">
+            <Parameter Name="companyname" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_loginstu">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_profile" ReturnType="Collection(registrationModel.sp_profile_Result)">
+          <Parameter Name="username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_student">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="age" Mode="In" Type="Int32" />
+            <Parameter Name="qualification" Mode="In" Type="String" />
+            <Parameter Name="passoutyear" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_viewintern" ReturnType="Collection(registrationModel.sp_viewintern_Result)" />
+          <FunctionImport Name="sp_viewjob" ReturnType="Collection(registrationModel.sp_viewjob_Result)" />
+          <FunctionImport Name="sp_appljob1">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_jobappview" ReturnType="Collection(String)">
+            </FunctionImport>
+          <EntitySet Name="applyjob1" EntityType="registrationModel.applyjob1" />
+          <FunctionImport Name="sp_viewappjob" ReturnType="Collection(registrationModel.sp_viewappjob_Result)" />
+          <FunctionImport Name="sp_jobapply" ReturnType="Collection(registrationModel.sp_jobapply_Result)">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_compprof_Result">
+          <Property Type="String" Name="companyname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_profile_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="age" Nullable="false" />
+          <Property Type="String" Name="qualification" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="passoutyear" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_viewintern_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="amount" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="duration" Nullable="false" />
+          <Property Type="String" Name="internshipname" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_viewjob_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="jobtitle" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="experiance" Nullable="false" />
+          <Property Type="String" Name="vaccancies" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="contactnumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="applyjob1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="sp_viewappjob_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_jobapply_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="age" Nullable="false" />
+          <Property Type="String" Name="qualification" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="passoutyear" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="registrationModelStoreContainer" CdmEntityContainer="registrationEntities">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="registrationModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="applyinterns">
+            <EntityTypeMapping TypeName="registrationModel.applyintern">
+              <MappingFragment StoreEntitySet="applyintern">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="companyies">
+            <EntityTypeMapping TypeName="registrationModel.companyy">
+              <MappingFragment StoreEntitySet="companyy">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="companyname" ColumnName="companyname" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="internships">
+            <EntityTypeMapping TypeName="registrationModel.internship">
+              <MappingFragment StoreEntitySet="internship">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="internshipname" ColumnName="internshipname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobs">
+            <EntityTypeMapping TypeName="registrationModel.job">
+              <MappingFragment StoreEntitySet="job">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jobtitle" ColumnName="jobtitle" />
+                <ScalarProperty Name="experiance" ColumnName="experiance" />
+                <ScalarProperty Name="vaccancies" ColumnName="vaccancies" />
+                <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobapplies">
+            <EntityTypeMapping TypeName="registrationModel.jobapply">
+              <MappingFragment StoreEntitySet="jobapply">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="applydate" ColumnName="applydate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="students">
+            <EntityTypeMapping TypeName="registrationModel.student">
+              <MappingFragment StoreEntitySet="student">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="qualification" ColumnName="qualification" />
+                <ScalarProperty Name="passoutyear" ColumnName="passoutyear" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_admin" FunctionName="registrationModel.Store.sp_admin" />
+          <FunctionImportMapping FunctionImportName="sp_appintern" FunctionName="registrationModel.Store.sp_appintern" />
+          <FunctionImportMapping FunctionImportName="sp_appjob" FunctionName="registrationModel.Store.sp_appjob" />
+          <FunctionImportMapping FunctionImportName="sp_changepwd" FunctionName="registrationModel.Store.sp_changepwd" />
+          <FunctionImportMapping FunctionImportName="sp_company" FunctionName="registrationModel.Store.sp_company" />
+          <FunctionImportMapping FunctionImportName="sp_compprof" FunctionName="registrationModel.Store.sp_compprof">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="registrationModel.sp_compprof_Result">
+                <ScalarProperty Name="companyname" ColumnName="companyname" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_comppwd" FunctionName="registrationModel.Store.sp_comppwd" />
+          <FunctionImportMapping FunctionImportName="sp_intern" FunctionName="registrationModel.Store.sp_intern" />
+          <FunctionImportMapping FunctionImportName="sp_job" FunctionName="registrationModel.Store.sp_job" />
+          <FunctionImportMapping FunctionImportName="sp_loginadm" FunctionName="registrationModel.Store.sp_loginadm" />
+          <FunctionImportMapping FunctionImportName="sp_loginadmin" FunctionName="registrationModel.Store.sp_loginadmin" />
+          <FunctionImportMapping FunctionImportName="sp_logincom" FunctionName="registrationModel.Store.sp_logincom" />
+          <FunctionImportMapping FunctionImportName="sp_loginstu" FunctionName="registrationModel.Store.sp_loginstu" />
+          <FunctionImportMapping FunctionImportName="sp_profile" FunctionName="registrationModel.Store.sp_profile">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="registrationModel.sp_profile_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="qualification" ColumnName="qualification" />
+                <ScalarProperty Name="passoutyear" ColumnName="passoutyear" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_student" FunctionName="registrationModel.Store.sp_student" />
+          <FunctionImportMapping FunctionImportName="sp_viewintern" FunctionName="registrationModel.Store.sp_viewintern">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="registrationModel.sp_viewintern_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="internshipname" ColumnName="internshipname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_viewjob" FunctionName="registrationModel.Store.sp_viewjob">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="registrationModel.sp_viewjob_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jobtitle" ColumnName="jobtitle" />
+                <ScalarProperty Name="experiance" ColumnName="experiance" />
+                <ScalarProperty Name="vaccancies" ColumnName="vaccancies" />
+                <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_appljob1" FunctionName="registrationModel.Store.sp_appljob1" />
+          <EntitySetMapping Name="applyjob1">
+            <EntityTypeMapping TypeName="registrationModel.applyjob1">
+              <MappingFragment StoreEntitySet="applyjob1">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_viewappjob" FunctionName="registrationModel.Store.sp_viewappjob">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="registrationModel.sp_viewappjob_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_jobapply" FunctionName="registrationModel.Store.sp_jobapply">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="registrationModel.sp_jobapply_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="qualification" ColumnName="qualification" />
+                <ScalarProperty Name="passoutyear" ColumnName="passoutyear" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

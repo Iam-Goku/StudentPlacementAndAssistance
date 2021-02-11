@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "jobview";
+}
+<link href="~/css/Jobview.css" rel="stylesheet" />
+
+<div class="job">
+    @foreach (var item in ViewBag.jobdetails)
+    {
+        <div>ID::@item.id </div>
+
+        <div>JOB::@item.jobtitle</div>
+              
+        <div>REQUIRED EXPERIANCE::@item.experiance</div>
+             
+        <div>VACCANCIES::@item.vaccancies</div>
+               
+        <div>COANTACT::@item.contactnumber</div>
+
+        <div>Email::@item.email</div>
+            
+        <div >
+        <button type="submit" class="but1">APPLY</button>
+        </div>
+    }
+
+
+</div>
+
+
+
+

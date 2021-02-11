@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "internview";
+}
+
+<link href="~/css/Jobview.css" rel="stylesheet" />
+
+<div class="Intern">
+
+   @foreach (var internship in Model)
+    {
+
+        <div>ID::@internship.id</div>
+        <div>AMOUNT::@internship.amount</div>
+        <div>DURATION::@internship.duration</div>
+        <div>INTERNSHIP NAME::@internship.internshipname</div>
+        <div>CONTACT NUMBER::@internship.contactnumber</div>
+        <div>EMAIL::@internship.email</div>
+
+            <div> <input class="but1" type="button" value="APPLY" /></div>
+
+
+
+        }
+</div>
+
+

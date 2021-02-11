@@ -1,0 +1,48 @@
+﻿@model WebApplication3.Models.intern
+@{
+    ViewBag.Title = "interns";
+}
+
+<h2>interns</h2>
+
+<div>
+    @using (Html.BeginForm("studinterns", "internship", FormMethod.Post))
+
+    {
+
+        <div><label>Id</label> </div>
+        <div>
+            @Html.TextBoxFor(m => m.id)
+            @Html.ValidationMessageFor(m => m.id)
+        </div>
+        <div><label>Amount</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.amount)
+            @Html.ValidationMessageFor(m => m.amount)
+        </div>
+        <div><label>Duration</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.duration)
+            @Html.ValidationMessageFor(m => m.duration)
+        </div>
+        <div><label>Internship Name</label> </div>
+        <div>
+            @Html.TextBoxFor(m => m.internshipname)
+            @Html.ValidationMessageFor(m => m.internshipname)
+        </div>
+        <div><label>Contact Number</label> </div>
+        <div>
+            @Html.TextBoxFor(m => m.contactnumber)
+            @Html.ValidationMessageFor(m => m.contactnumber)
+        </div>
+        <div><label>Email</label> </div>
+        <div>
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+        </div>
+        <div>
+            <input type="submit" value="add" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+</div>

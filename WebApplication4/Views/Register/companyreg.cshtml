@@ -1,0 +1,42 @@
+﻿@model WebApplication3.Models.comp
+@{
+    ViewBag.Title = "companyreg";
+}
+<link href="~/css/Registration.css" rel="stylesheet" />
+
+<div class="container">
+    @using (Html.BeginForm("company", "Register", FormMethod.Post))
+    {
+        <div style="background-image:linear-gradient(rgb(255, 255, 255),rgb(0, 148, 255))">
+            <center><P style="font-size:50px;color:crimson"><b>COMPANY</b></P></center>
+        </div>
+
+
+        <label for="id"><b>ID</b></label>
+        <input type="text" placeholder="Enter id" name="id" id="id" required>
+
+        <label for="company"><b>COMPANY</b></label>
+        <input type="text" placeholder="Enter company" name="compname" id="compname" required>
+
+        <label for="address"><b>ADDRESS</b></label>
+        <input type="text" placeholder="Enter address" name="address" id="address" required>
+        <br/>
+
+        <label for="phone"><b>PHONE</b></label>
+        <input type="text" placeholder="Enter phone" name="phone" id="phone" required>
+
+        <label for="email"><b>EMAIL</b></label>
+        <input type="text" placeholder="Enter email" name="email" id="email" required>
+
+        <label for="password"><b>PASSWORD</b></label>
+        <input type="password" placeholder="Enter password" name="password" id="password" required>
+
+
+
+        <div>
+
+            <button type="submit" class="reg">Register</button>
+            <strong>@Html.DisplayFor(m => m.msg)</strong>
+        </div>
+    }
+</div>

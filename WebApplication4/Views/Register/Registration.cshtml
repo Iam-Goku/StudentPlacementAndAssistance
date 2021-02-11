@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+<link href="~/css/HomePage.css" rel="stylesheet" />
+<body>
+    <table style="width:100%;">
+        <tr>
+            <td>
+                <div style="background-image:linear-gradient(rgb(255, 255, 255),rgb(0, 148, 255))">
+                <center><P style="font-size:50px;color:crimson"><b>Registration</b></P></center></div> 
+
+                 <center> <a href='@Url.Action("studentreg","Register")'>
+                   <img src='@Url.Content("~/student.jpg")'class="img">
+                  </a>  </center>
+                <br /><br /><br />
+
+                <center>
+                    <a href='@Url.Action("companyreg","Register")'>
+                        <img src='@Url.Content("~/company.jpg")' class="img">
+                    </a>
+                </center>    
+            </td>
+        </tr>
+    </table>
+</body>

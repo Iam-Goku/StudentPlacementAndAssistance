@@ -1,0 +1,43 @@
+﻿@model WebApplication3.Models.profileClass1
+@{
+    Layout = null;
+}
+
+
+<div>
+    @using (Html.BeginForm("student profile", "viewstuddetails", FormMethod.Post))
+    {
+        <div><label>name</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+
+        </div>
+        <div><label>age</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.age)
+            @Html.ValidationMessageFor(m => m.age)
+
+        </div>
+        <div><label>qualification</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.qualification)
+            @Html.ValidationMessageFor(m => m.qualification)
+
+        </div>
+        <div><label>passoutyear</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.passoutyear)
+            @Html.ValidationMessageFor(m => m.passoutyear)
+
+        </div>
+
+        <div><label>email</label></div>
+        <div>
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+
+        </div>
+    }
+
+</div>

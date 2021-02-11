@@ -1,0 +1,36 @@
+﻿@model WebApplication3.Models.pwd
+@{
+    ViewBag.Title = "changeload";
+}
+
+<center><h2>CHANGE PASSWORD</h2></center>
+<center>
+    @using (Html.BeginForm("changclick", "password", FormMethod.Post))
+    {
+        <div><label>Current Password</label></div>
+        <div>
+            @Html.PasswordFor(m => m.oldpwd)
+            @Html.ValidationMessageFor(m => m.oldpwd)
+        </div>
+        <div><label>New Password</label></div>
+        <div>
+            @Html.PasswordFor(m => m.newpwd)
+            @Html.ValidationMessageFor(m => m.newpwd)
+        </div>
+        <div><label>Confirm Password</label></div>
+
+        <div>
+            @Html.PasswordFor(m => m.conpwd)
+            @Html.ValidationMessageFor(m => m.conpwd)
+        </div>
+
+        <br />
+
+        <div>
+            <input type="submit" value="Reset password" style="background-color:blueviolet" />
+            <br/>
+            @Html.DisplayFor(m => m.result)
+        </div>
+
+    }
+</center>
