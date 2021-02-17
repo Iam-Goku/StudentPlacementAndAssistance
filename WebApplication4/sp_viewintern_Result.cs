@@ -17,5 +17,7 @@ namespace WebApplication4
         public string amount { get; set; }
         public int duration { get; set; }
         public string internshipname { get; set; }
+        public string contactnumber { get; set; }
+        public string email { get; set; }
     }
 }

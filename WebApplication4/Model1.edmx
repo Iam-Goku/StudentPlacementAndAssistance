@@ -18,7 +18,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="qulification" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="applyjob1">
           <Key>
@@ -88,7 +90,9 @@
         </Function>
         <Function Name="sp_appintern" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
-          <Parameter Name="date" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="place" Type="varchar" Mode="In" />
+          <Parameter Name="qulification" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_appjob" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
@@ -205,7 +209,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="place" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="qulification" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="companyy">
           <Key>
@@ -226,7 +232,7 @@
           <Property Name="amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="duration" Type="Int32" Nullable="false" />
           <Property Name="internshipname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="contactnumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contactnumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="job">
@@ -275,7 +281,9 @@
           </FunctionImport>
           <FunctionImport Name="sp_appintern">
             <Parameter Name="id" Mode="In" Type="Int32" />
-            <Parameter Name="date" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="place" Mode="In" Type="String" />
+            <Parameter Name="qulification" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_appjob">
             <Parameter Name="id" Mode="In" Type="Int32" />
@@ -387,6 +395,8 @@
           <Property Type="String" Name="amount" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="duration" Nullable="false" />
           <Property Type="String" Name="internshipname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="contactnumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="sp_viewjob_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
@@ -434,8 +444,10 @@
           <EntitySetMapping Name="applyinterns">
             <EntityTypeMapping TypeName="registrationModel.applyintern">
               <MappingFragment StoreEntitySet="applyintern">
+                <ScalarProperty Name="qulification" ColumnName="qulification" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="date" ColumnName="date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -538,6 +550,8 @@
                 <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="duration" ColumnName="duration" />
                 <ScalarProperty Name="internshipname" ColumnName="internshipname" />
+                <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

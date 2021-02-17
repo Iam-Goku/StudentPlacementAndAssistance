@@ -53,17 +53,25 @@ namespace WebApplication4
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_admin", idParameter, nameParameter, passwordParameter);
         }
     
-        public virtual int sp_appintern(Nullable<int> id, string date)
+        public virtual int sp_appintern(Nullable<int> id, string name, string place, string qulification)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("id", id) :
                 new ObjectParameter("id", typeof(int));
     
-            var dateParameter = date != null ?
-                new ObjectParameter("date", date) :
-                new ObjectParameter("date", typeof(string));
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_appintern", idParameter, dateParameter);
+            var placeParameter = place != null ?
+                new ObjectParameter("place", place) :
+                new ObjectParameter("place", typeof(string));
+    
+            var qulificationParameter = qulification != null ?
+                new ObjectParameter("qulification", qulification) :
+                new ObjectParameter("qulification", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_appintern", idParameter, nameParameter, placeParameter, qulificationParameter);
         }
     
         public virtual int sp_appjob(Nullable<int> id, string date)
@@ -356,5 +364,7 @@ namespace WebApplication4
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_jobapply_Result>("sp_jobapply", nameParameter, passwordParameter);
         }
+
+        public System.Data.Entity.DbSet<WebApplication3.Models.internviewapply> internviewapplies { get; set; }
     }
 }

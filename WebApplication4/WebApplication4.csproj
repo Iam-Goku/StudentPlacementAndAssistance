@@ -375,6 +375,7 @@
     <Content Include="Views\jobviewaplies\Index.cshtml" />
     <Content Include="Views\applyjobview\jobview.cshtml" />
     <Content Include="Views\applyinternview\internview.cshtml" />
+    <Content Include="Views\applyinternview\Button.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

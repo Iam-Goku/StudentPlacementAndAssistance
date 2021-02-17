@@ -7,7 +7,7 @@
 
 <div class="Intern">
 
-   @foreach (var internship in Model)
+    @foreach (var internship in Model)
     {
 
         <div>ID::@internship.id</div>
@@ -17,11 +17,20 @@
         <div>CONTACT NUMBER::@internship.contactnumber</div>
         <div>EMAIL::@internship.email</div>
 
-            <div> <input class="but1" type="button" value="APPLY" /></div>
+
+        <div class="col-md-offset-2 col-md-12">
+            <a  class="but1" onclick="" href="@Url.Action("Button","applyinternview")">APPLY</a>
+
+
+        </div>
+
+     
 
 
 
-        }
+
+    }
 </div>
+
 
 

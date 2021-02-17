@@ -15,6 +15,8 @@ namespace WebApplication4
     public partial class applyintern
     {
         public int id { get; set; }
-        public string date { get; set; }
+        public string name { get; set; }
+        public string place { get; set; }
+        public string qulification { get; set; }
     }
 }

@@ -11,16 +11,12 @@ namespace WebApplication3.Models
         [Required(ErrorMessage = "*")]
         public int id { get; set; }
         [Required(ErrorMessage = "*")]
-        public string amount { get; set; }
+        public string name { get; set; }
         [Required(ErrorMessage = "*")]
-        public int duration { get; set; }
+        public string place { get; set; }
         [Required(ErrorMessage = "*")]
-        public string internshipname { get; set; }
-        [Required(ErrorMessage = "*")]
-        public string contactnumber { get; set; }
-        [Required(ErrorMessage = "*")]
-        public string email { get; set; }
-
+        public string qulificaiton { get; set; }
+  
         public string msg { get; set; }
     }
 }
