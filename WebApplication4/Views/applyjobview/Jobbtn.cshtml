@@ -1,0 +1,49 @@
+﻿@model WebApplication4.Models.jobapp
+
+@{
+    ViewBag.Title = "Jobbtn";
+}
+<link href="~/css/Jobview.css" rel="stylesheet" />
+
+<div>
+
+    @using (Html.BeginForm("Jobbtn", "applyjobview"))
+    {
+        <center>
+            <label for="id"><b>ID</b></label>
+            <input type="text" placeholder="Enter ID" name="id" id="id" required>
+            <br />
+        </center>
+
+        <center>
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name" required>
+            <br />
+        </center>
+
+        <center>
+            <label for="place"><b>Place</b></label>
+            <input type="text" placeholder="Enter Place" name="place" id="place" required>
+            <br />
+        </center>
+
+        <center>
+            <label for="qualification"><b>Qualification</b></label>
+            <input type="text" placeholder="Enter Qualification" name="qualification" id="qualification" required>
+            <br />
+        </center>
+
+        <div>
+
+
+
+            <input type="submit" class="but1" value="Apply" />
+
+            <strong>@Html.DisplayFor(m => m.msg)</strong>
+
+        </div>
+
+    }
+
+</div>
+

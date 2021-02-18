@@ -8,9 +8,15 @@ namespace WebApplication4.Models
 {
     public class jobapp
     {
-        [Required(ErrorMessage = " ")]
+        [Required(ErrorMessage = "*")]
         public int id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
+        [Required(ErrorMessage = "*")]
+        public string name { get; set; }
+        [Required(ErrorMessage = "*")]
+        public string place { get; set; }
+        [Required(ErrorMessage = "*")]
+        public string qualification { get; set; }
+
+        public string msg { get; set; }
     }
 }

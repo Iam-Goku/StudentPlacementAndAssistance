@@ -364,7 +364,28 @@ namespace WebApplication4
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_jobapply_Result>("sp_jobapply", nameParameter, passwordParameter);
         }
+    
+        public virtual int sp_jobapp(Nullable<int> id, string name, string place, string qualification)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var placeParameter = place != null ?
+                new ObjectParameter("place", place) :
+                new ObjectParameter("place", typeof(string));
+    
+            var qualificationParameter = qualification != null ?
+                new ObjectParameter("qualification", qualification) :
+                new ObjectParameter("qualification", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_jobapp", idParameter, nameParameter, placeParameter, qualificationParameter);
+        }
 
-        public System.Data.Entity.DbSet<WebApplication3.Models.internviewapply> internviewapplies { get; set; }
+        public System.Data.Entity.DbSet<WebApplication4.Models.jobapp> jobapps { get; set; }
     }
 }
