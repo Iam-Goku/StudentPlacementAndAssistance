@@ -2,46 +2,39 @@
 @{
     ViewBag.Title = "compjob";
 }
+<link href="~/css/Registration.css" rel="stylesheet" />
 
-<h2>compjob</h2>
-<div>
+<br/>
+<div  class="container">
     @using (Html.BeginForm("job", "job", FormMethod.Post))
 
     {
 
-        <div><label>id</label> </div>
+        <label for="id"><b>ID</b></label>
+        <input type="text" placeholder="Enter Id" name="id" id="id" required>
+
+        <label for="jobtitle"><b>JOB TITLE</b></label>
+        <input type="text" placeholder="Enter jobtitle" name="jobtitle" id="jobtitle" required>
+
+        <label for="experiance"><b>EXPERIANCE</b></label>
+        <input type="text" placeholder="Enter experiance" name="experiance" id="experiance" required>
+        <br/>
+
+        <label for="vaccancies"><b>VACCANCIES</b></label>
+        <input type="text" placeholder="Enter vaccancies" name="vaccancies" id="vaccancies" required>
+
+        <label for="contactnumber"><b>CONTACT NUMBER</b></label>
+        <input type="text" placeholder="Enter contactnumber" name="contactnumber" id="contactnumber" required>
+
+        <label for="email"><b>EMAIL</b></label>
+        <input type="text" placeholder="Enter email" name="email" id="email" required>
+
         <div>
-            @Html.TextBoxFor(m => m.id)
-            @Html.ValidationMessageFor(m => m.id)
-        </div>
-        <div><label>job title</label></div>
-        <div>
-            @Html.TextBoxFor(m => m.jobtitle)
-            @Html.ValidationMessageFor(m => m.jobtitle)
-        </div>
-        <div><label>Experiance</label></div>
-        <div>
-            @Html.TextBoxFor(m => m.experiance)
-            @Html.ValidationMessageFor(m => m.experiance)
-        </div>
-        <div><label>Vaccancies</label> </div>
-        <div>
-            @Html.TextBoxFor(m => m.vaccancies)
-            @Html.ValidationMessageFor(m => m.vaccancies)
-        </div>
-        <div><label>Contact Number</label> </div>
-        <div>
-            @Html.TextBoxFor(m => m.contactnumber)
-            @Html.ValidationMessageFor(m => m.contactnumber)
-        </div>
-        <div><label>Email</label></div>
-        <div>
-            @Html.TextBoxFor(m => m.email)
-            @Html.ValidationMessageFor(m => m.email)
-        </div>
-        <div>
-            <input type="submit" value="add" />
-            @Html.DisplayFor(m => m.msg)
+
+            <button type="submit" class="reg">ADD</button>
+            <strong>@Html.DisplayFor(m => m.msg)</strong>
+
+        
         </div>
     }
 </div>

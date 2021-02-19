@@ -34,7 +34,6 @@ namespace WebApplication4
         public virtual DbSet<job> jobs { get; set; }
         public virtual DbSet<jobapply> jobapplies { get; set; }
         public virtual DbSet<student> students { get; set; }
-        public virtual DbSet<applyjob1> applyjob1 { get; set; }
     
         public virtual int sp_admin(Nullable<int> id, string name, string password)
         {
@@ -385,7 +384,10 @@ namespace WebApplication4
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_jobapp", idParameter, nameParameter, placeParameter, qualificationParameter);
         }
-
-        public System.Data.Entity.DbSet<WebApplication4.Models.jobapp> jobapps { get; set; }
+    
+        public virtual ObjectResult<sp_internview_Result> sp_internview()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_internview_Result>("sp_internview");
+        }
     }
 }

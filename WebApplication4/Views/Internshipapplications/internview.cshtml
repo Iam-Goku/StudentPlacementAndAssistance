@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "internview";
+}
+
+
+
+<div class="job">
+    @foreach (var item in ViewBag.interndetails)
+    {
+        <div>ID::@item.id </div>
+
+        <div>JOB::@item.name</div>
+
+        <div>PLACE::@item.place</div>
+
+        <div>QUALIFICATION::@item.qulification</div>
+
+   
+
+    }
+
+
+</div>
+
+
+

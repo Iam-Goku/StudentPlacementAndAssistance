@@ -13,10 +13,11 @@ namespace WebApplication4.Controllers
    
         public ActionResult jobappview()
         {
+                                   
             registrationEntities std = new registrationEntities();
-            var no = std.sp_viewappjob();
-          
-            return View(no.ToList());
+            var getdata = std.sp_viewappjob().ToList();
+            ViewBag.appliedjob = getdata;
+            return View();
         }
     }
 }

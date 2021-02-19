@@ -3,11 +3,11 @@
     ViewBag.Title = "changeload1";
 }
 
-<h2>changeload1</h2>
-<div>
+<center><h2>CHANGE PASSWORD</h2></center>
+<center>
     @using (Html.BeginForm("changclick1", "password", FormMethod.Post))
     {
-        <div><label>curret password</label></div>
+        <div><label>Curret Password</label></div>
         <div>
             @Html.PasswordFor(m => m.oldpwd)
             @Html.ValidationMessageFor(m => m.oldpwd)
@@ -17,18 +17,15 @@
             @Html.PasswordFor(m => m.newpwd)
             @Html.ValidationMessageFor(m => m.newpwd)
         </div>
-        <div><label>confirm Password</label></div>
-
+        <div><label>Confirm Password</label></div>
         <div>
             @Html.PasswordFor(m => m.conpwd)
             @Html.ValidationMessageFor(m => m.conpwd)
         </div>
         <div>
-            <input type="submit" value="Reset password" />
+            <input type="submit" value="Reset password" style="background-color:blueviolet"/>
+            <br/>
             @Html.DisplayFor(m => m.result)
-        </div>
-        <div>
-            @Html.ActionLink("homepage", "home1", "login")
-        </div>
+       </div>     
     }
-</div>
+</center>

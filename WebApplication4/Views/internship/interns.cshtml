@@ -2,47 +2,38 @@
 @{
     ViewBag.Title = "interns";
 }
+<link href="~/css/Registration.css" rel="stylesheet" />
+<br/>
 
-<h2>interns</h2>
-
-<div>
+<div class="container">
     @using (Html.BeginForm("studinterns", "internship", FormMethod.Post))
 
     {
+        <label for="id"><b>ID</b></label>
+        <input type="text" placeholder="Enter Id" name="id" id="id" required>
 
-        <div><label>Id</label> </div>
+        <label for="amount"><b>AMOUNT</b></label>
+        <input type="text" placeholder="Enter amount" name="amount" id="amount" required>
+
+        <label for="duration"><b>DURATION</b></label>
+        <input type="text" placeholder="Enter duration" name="duration" id="duration" required>
+        <br />
+
+        <label for="internshipname"><b>INTERNSHIP NAME</b></label>
+        <input type="text" placeholder="Enter internshipname" name="internshipname" id="internshipname" required>
+
+        <label for="contactnumber"><b>CONTACT NUMBER</b></label>
+        <input type="text" placeholder="Enter contactnumber" name="contactnumber" id="contactnumber" required>
+        <br />
+
+        <label for="email"><b>EMAIL</b></label>
+        <input type="text" placeholder="Enter email" name="email" id="email" required>
+
         <div>
-            @Html.TextBoxFor(m => m.id)
-            @Html.ValidationMessageFor(m => m.id)
-        </div>
-        <div><label>Amount</label></div>
-        <div>
-            @Html.TextBoxFor(m => m.amount)
-            @Html.ValidationMessageFor(m => m.amount)
-        </div>
-        <div><label>Duration</label></div>
-        <div>
-            @Html.TextBoxFor(m => m.duration)
-            @Html.ValidationMessageFor(m => m.duration)
-        </div>
-        <div><label>Internship Name</label> </div>
-        <div>
-            @Html.TextBoxFor(m => m.internshipname)
-            @Html.ValidationMessageFor(m => m.internshipname)
-        </div>
-        <div><label>Contact Number</label> </div>
-        <div>
-            @Html.TextBoxFor(m => m.contactnumber)
-            @Html.ValidationMessageFor(m => m.contactnumber)
-        </div>
-        <div><label>Email</label> </div>
-        <div>
-            @Html.TextBoxFor(m => m.email)
-            @Html.ValidationMessageFor(m => m.email)
-        </div>
-        <div>
-            <input type="submit" value="add" />
-            @Html.DisplayFor(m => m.msg)
+            <button type="submit" class="reg">ADD</button>
+            <strong>@Html.DisplayFor(m => m.msg)</strong>
+
+
         </div>
     }
 </div>

@@ -7,27 +7,27 @@
 <div>
     
         @using (Html.BeginForm("Button", "applyinternview"))
-        {
-            <center>
-                <label for="id"><b>ID</b></label>
-                <input type="text" placeholder="Enter ID" name="id" id="id" required>
-                <br />
-            </center>
+         {
+    <center>
+        <label for="id"><b></b></label><br />
+        <input type="text" placeholder="Enter ID" name="id" id="id" required>
+        <br />
+    </center>
+
+    <center>
+        <label for="name"><b>Name</b></label> <br />
+        <input type="text" placeholder="Enter Name" name="name" id="name" required>
+        <br />
+    </center>
 
             <center>
-                <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" id="name" required>
-                <br />
-            </center>
-
-            <center>
-                <label for="place"><b>Place</b></label>
+                <label for="place"><b>Place</b></label><br />
                 <input type="text" placeholder="Enter Place" name="place" id="place" required>
                 <br />
             </center>
 
             <center>
-                <label for="qulificaiton"><b>Qualification</b></label>
+                <label for="qulificaiton"><b>Qualification</b></label><br />
                 <input type="text" placeholder="Enter Qualification" name="qulificaiton" id="qulificaiton" required>
                 <br />
             </center>
@@ -36,7 +36,7 @@
 
 
 
-                <input type="submit" class="but1" value="Apply" />
+                 <center><input type="submit" class="but2" value="Apply" /> </center>
 
                 <strong>@Html.DisplayFor(m => m.msg)</strong>
 

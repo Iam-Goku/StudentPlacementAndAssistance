@@ -10,34 +10,31 @@
     @using (Html.BeginForm("Jobbtn", "applyjobview"))
     {
         <center>
-            <label for="id"><b>ID</b></label>
+            <label for="id"><b>ID</b></label><br />
             <input type="text" placeholder="Enter ID" name="id" id="id" required>
             <br />
         </center>
 
         <center>
-            <label for="name"><b>Name</b></label>
+            <label for="name"><b>Name</b></label><br />
             <input type="text" placeholder="Enter Name" name="name" id="name" required>
             <br />
         </center>
 
         <center>
-            <label for="place"><b>Place</b></label>
+            <label for="place"><b>Place</b></label><br />
             <input type="text" placeholder="Enter Place" name="place" id="place" required>
             <br />
         </center>
 
         <center>
-            <label for="qualification"><b>Qualification</b></label>
+            <label for="qualification"><b>Qualification</b></label><br />
             <input type="text" placeholder="Enter Qualification" name="qualification" id="qualification" required>
             <br />
         </center>
 
         <div>
-
-
-
-            <input type="submit" class="but1" value="Apply" />
+            <center><input type="submit" class="but2" value="Apply" /></center>
 
             <strong>@Html.DisplayFor(m => m.msg)</strong>
 
